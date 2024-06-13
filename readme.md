@@ -1,4 +1,4 @@
-# React Role-Based Access Control Application Coding Challenge
+# Role-Based Access Control Application Coding Challenge
 
 This coding challenge aims to evaluate your ability to create a Role-Based Access Control (RBAC) web application using React. We encourage you to approach this challenge as an opportunity to demonstrate your understanding of best practices in terms of coding standards, design patterns, scalability, performance optimization, and overall structure of a React application.
 
