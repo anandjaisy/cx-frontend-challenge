@@ -1,6 +1,6 @@
 # Role-Based Access Control Application Coding Challenge
 
-This coding challenge aims to evaluate your ability to create a Role-Based Access Control (RBAC) web application using React. We encourage you to approach this challenge as an opportunity to demonstrate your understanding of best practices in terms of coding standards, design patterns, scalability, performance optimization, and overall structure of a React application.
+This coding challenge aims to evaluate your ability to create a Role-Based Access Control (RBAC) web application using Angular/React. We encourage you to approach this challenge as an opportunity to demonstrate your understanding of best practices in terms of coding standards, design patterns, scalability, performance optimization, and overall structure of an Angular/React application.
 
 There is no expectation to spend anymore than 2 hours on this test, and your submission will be evaluated based on the following criteria:
 
@@ -17,7 +17,7 @@ Your task is to build an RBAC application where you can perform CRUD (Create, Re
 
 ## Initial Setup
 
-Seed your application's initial state with user data from the JSON Placeholder API (`https://jsonplaceholder.typicode.com/users`). Once the initial state is set, handle all subsequent state changes locally using either the Context API or Redux.
+Seed your application's initial state with user data from the JSON Placeholder API (`https://jsonplaceholder.typicode.com/users`). Once the initial state is set, handle all subsequent state changes locally using either the Context API or Redux or equivalent.
 
 ## Roles and Permissions
 
