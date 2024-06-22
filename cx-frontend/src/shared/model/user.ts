@@ -1,5 +1,6 @@
 import {Company} from "./Company";
 import {Address} from "./Address";
+import {Permissions, Role} from "./enum";
 
 export interface User {
   id: number
@@ -9,5 +10,7 @@ export interface User {
   address: Address
   phone: string
   website: string
-  company: Company
+  company: Company,
+  role: Role,
+  permissions?: Permissions[]
 }

@@ -1,6 +1,6 @@
 export enum Role {
-  Admin,
-  Staff
+  Admin=0,
+  Staff=1
 }
 export enum Permissions {
   CanCreateUser,
@@ -8,5 +8,5 @@ export enum Permissions {
   CanUpdateUser,
   CanDeleteUser,
   CanViewProtectedRoute1,
-  CanViewProtectedRoute2,
+  CanViewProtectedRoute2
 }

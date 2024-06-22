@@ -7,7 +7,6 @@
           <p class="font-thin text-sm">A list of all the users in your account including their name, title, email and
             role.</p>
         </div>
-        <button mat-flat-button>Add user</button>
       </div>
       <div class="relative overflow-x-auto">
         <table class="w-full font-thin text-left rtl:text-right">
@@ -28,7 +27,7 @@
           </tr>
           </thead>
           <tbody>
-            @for (user of users; track user.id) {
+            @for (user of users$ | async; track user.id) {
               <tr class="border-b hover:bg-gray-50">
                 <th scope="row" class="px-6 py-2 font-normal text-xs">
                   {{user?.name}}
@@ -37,10 +36,14 @@
                   {{user?.company?.name}}
                 </td>
                 <td class="px-6 py-2 font-thin text-xs">
-                  -
+                  @if (user?.role != undefined) {
+                    {{user?.role == role.Admin ? 'Admin' : 'Staff'}}
+                  }@else {
+                    -
+                  }
                 </td>
                 <td class="px-6 py-2 text-right">
-                  <a href="#" class="text-blue-600 font-thin hover:underline text-xs">Edit</a>
+                  <a [routerLink]="user.id.toString()" routerLinkActive="active" class="text-blue-600 font-thin hover:underline text-xs">Edit</a>
                 </td>
               </tr>
             }

@@ -1,0 +1,85 @@
+<mat-card appearance="outlined" class="my-5">
+  <mat-card-content>
+    <mat-tab-group>
+      <mat-tab label="Details">
+        <div class="flex justify-center ...">
+          <mat-card appearance="outlined" class="my-5 w-2/5">
+            <mat-card-content>
+              <div class="flex flex-col gap-3">
+                <div class="flex justify-center">
+                  <img class="w-28 h-28 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
+                       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOuxrvcNMfGLh73uKP1QqYpKoCB0JLXiBMvA&s"
+                       alt="Bordered avatar">
+                </div>
+                @if (user$ | async; as user) {
+                  <div class="flex flex-row w-full gap-3 mt-5">
+                    <span class="w-1/2 flex justify-center">Name:</span>
+                    <span class="w-1/2 font-thin text-sm content-center">{{ user.name }}</span>
+                  </div>
+                  <div class="flex flex-row w-full gap-3">
+                    <span class="w-1/2 flex justify-center">User name:</span>
+                    <span class="w-1/2 font-thin text-sm content-center">{{ user.username }}</span>
+                  </div>
+                  <div class="flex flex-row w-full gap-3">
+                    <span class="w-1/2 flex justify-center">Email:</span>
+                    <span class="w-1/2 font-thin text-sm content-center">{{ user.email }}</span>
+                  </div>
+                  <div class="flex flex-row w-full gap-3">
+                    <span class="w-1/2 flex justify-center">Address:</span>
+                    <span class="w-1/2 font-thin text-sm content-center">{{ user.address?.street }}
+                      ,{{ user.address?.suite }}, {{ user.address?.city }}, {{ user.address?.zipcode }} </span>
+                  </div>
+                  <div class="flex flex-row w-full gap-3">
+                    <span class="w-1/2 flex justify-center">Phone:</span>
+                    <span class="w-1/2 font-thin text-sm content-center">{{ user.phone }}</span>
+                  </div>
+                  <div class="flex flex-row w-full gap-3">
+                    <span class="w-1/2 flex justify-center">Website:</span>
+                    <span class="w-1/2 font-thin text-sm content-center">{{ user.website }}</span>
+                  </div>
+                  <div class="flex flex-row w-full gap-3">
+                    <span class="w-1/2 flex justify-center">Company:</span>
+                    <span class="w-1/2 font-thin text-sm content-center">{{ user.company?.name }},{{ user.company?.bs }}
+                      , {{ user.company?.catchPhrase }} </span>
+                  </div>
+                  <div class="flex flex-row w-full gap-3">
+                    <span class="w-1/2 flex justify-center">Role:</span>
+                    <mat-form-field appearance="outline" class="w-1/2">
+                      <mat-label>Select a role</mat-label>
+                      <mat-select [formControl]="selectedRole">
+                        <mat-option [value]="role.Admin">Admin</mat-option>
+                        <mat-option [value]="role.Staff">Staff</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                  @if (isStaffRole()) {
+                    <div class="flex flex-row w-full gap-3">
+                      <span class="w-1/2 flex justify-center">Permission:</span>
+                      <mat-form-field appearance="outline" class="w-1/2">
+                        <mat-label>Select a permission</mat-label>
+                        <mat-select multiple [formControl]="selectedPermission">
+                          <mat-option [value]="permissions.CanCreateUser">Create user</mat-option>
+                          <mat-option [value]="permissions.CanReadUser">Read user</mat-option>
+                          <mat-option [value]="permissions.CanUpdateUser">Update user</mat-option>
+                          <mat-option [value]="permissions.CanDeleteUser">Delete user</mat-option>
+                          <mat-option [value]="permissions.CanViewProtectedRoute1">Can view protected route 1
+                          </mat-option>
+                          <mat-option [value]="permissions.CanViewProtectedRoute2">Can view protected route 2
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                  }
+                  <div class="flex justify-center">
+                    <button mat-flat-button class="w-1/2" (click)="onSavePermission()" [disabled]="selectedRole.value == undefined">Save</button>
+                  </div>
+                }
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+
+  </mat-card-content>
+</mat-card>
