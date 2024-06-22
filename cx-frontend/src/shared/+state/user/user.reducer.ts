@@ -37,6 +37,13 @@ export const userReducer = createReducer(
       users: updatedUsers
     };
   }),
+  on(UserActions.deleteUsers, (state, {userId}) => {
+    const filteredUsers = state.users.filter(user => user.id !== userId);
+    return {
+      ...state,
+      users: filteredUsers
+    };
+  }),
   on(UserActions.loadUsersFailure, (state) => ({
     ...state,
     users: []

@@ -23,4 +23,7 @@ export class UserFacade {
   saveRolePermission(userId: number, role: Role, permissions: Permissions[] | undefined): void{
     this.store.dispatch(UserActions.saveUsersRolePermission({userId: userId, role: role, permissions: permissions}));
   }
+  deleteUser(userId: number) {
+    this.store.dispatch(UserActions.deleteUsers({userId: userId}));
+  }
 }

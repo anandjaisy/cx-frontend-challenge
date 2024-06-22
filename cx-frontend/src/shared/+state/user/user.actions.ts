@@ -8,6 +8,7 @@ export const UserActions = createActionGroup({
     'Load Users': emptyProps(),
     'Load Users Success': props<{ data: User[] }>(),
     'Load Users Failure': emptyProps(),
-    'Save Users Role Permission': props<{userId: number, role: Role, permissions: Permissions[] | undefined}>()
+    'Save Users Role Permission': props<{userId: number, role: Role, permissions: Permissions[] | undefined}>(),
+    'Delete Users': props<{userId: number}>()
   }
 });

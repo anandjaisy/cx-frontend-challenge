@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminDashboardComponent } from './admin-dashboard.component';
+import { ProtectedRoute1Component } from './protected-route1.component';
 
-describe('AdminDashboardComponent', () => {
-  let component: AdminDashboardComponent;
-  let fixture: ComponentFixture<AdminDashboardComponent>;
+describe('ProtectedRoute1Component', () => {
+  let component: ProtectedRoute1Component;
+  let fixture: ComponentFixture<ProtectedRoute1Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AdminDashboardComponent]
+      imports: [ProtectedRoute1Component]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AdminDashboardComponent);
+    fixture = TestBed.createComponent(ProtectedRoute1Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

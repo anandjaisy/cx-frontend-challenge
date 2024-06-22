@@ -49,7 +49,7 @@ export class UserDetailsComponent implements OnInit {
     this.user$.pipe(tap((item) => {
       this.user = (item as User);
       this.selectedRole.setValue(this.user?.role);
-      this.selectedPermission.setValue(this.user.permissions);
+      this.selectedPermission.setValue(this.user?.permissions);
     })).subscribe();
   }
 
